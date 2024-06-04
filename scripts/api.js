@@ -49,3 +49,5 @@ export const fetchNewsArticles = async (query) => {
         return [];
     }
 };
+
+
