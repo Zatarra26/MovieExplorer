@@ -38,12 +38,12 @@ export const fetchMovieCast = async (movieId) => {
     }
 };
 
-export const fetchNewsArticles = async (query) => {
-    const url = `${newsApiUrl}?q=${encodeURIComponent(query)}&apiKey=${newsApiKey}`;
+const fetchNewsArticles = async (query) => {
+    const url = `http://localhost:3000/news?q=${encodeURIComponent(query)}`;
     try {
         const response = await fetch(url);
         const data = await response.json();
-        return data.articles.slice(0, 5); // Limit to 5 articles
+        return data.slice(0, 5); // Limit to 5 articles
     } catch (error) {
         console.error('Error fetching news articles:', error);
         return [];
