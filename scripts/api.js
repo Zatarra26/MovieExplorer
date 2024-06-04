@@ -38,8 +38,8 @@ export const fetchMovieCast = async (movieId) => {
     }
 };
 
-const fetchNewsArticles = async (query) => {
-    const url = `http://localhost:3000/news?q=${encodeURIComponent(query)}`;
+export const fetchNewsArticles = async (query) => {
+    const url = `https://MovieExplorer.onrender.com/news?q=${encodeURIComponent(query)}`;
     try {
         const response = await fetch(url);
         const data = await response.json();
